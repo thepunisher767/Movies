@@ -9,11 +9,13 @@ namespace Movies
     {
         private string _title;
         private string _category;
+        private int _year;
 
-        public Movie(string title, string category)
+        public Movie(string title, string category, int year)
         {
             _title = title;
             _category = category;
+            _year = year;
         }
         public string Title
         {
@@ -29,6 +31,13 @@ namespace Movies
                 return _category;
             }
         }
+        public int Year
+        {
+            get
+            {
+                return _year;
+            }
+        }
     }
 
     class Program
@@ -37,16 +46,16 @@ namespace Movies
         {
             bool continueFlag = true;
             List<Movie> movieList = new List<Movie>();
-            movieList.Add(new Movie("Halloween", "Horror"));
-            movieList.Add(new Movie("The Implication", "Horror"));
-            movieList.Add(new Movie("Dumb and Dumber", "Comedy"));
-            movieList.Add(new Movie("Big Trouble in Little China", "Comedy"));
-            movieList.Add(new Movie("The Daiquri Man", "Horror"));
-            movieList.Add(new Movie("Terminator 2", "Action"));
-            movieList.Add(new Movie("Predator", "Action"));
-            movieList.Add(new Movie("Brokeback Mountain", "Romance"));
-            movieList.Add(new Movie("Dayman", "Romance"));
-            movieList.Add(new Movie("Troll Toll", "Comedy"));
+            movieList.Add(new Movie("Halloween", "Horror", 1978));
+            movieList.Add(new Movie("The Implication", "Horror", 2010));
+            movieList.Add(new Movie("Dumb and Dumber", "Comedy", 1994));
+            movieList.Add(new Movie("Big Trouble in Little China", "Comedy", 1986));
+            movieList.Add(new Movie("The Daiquri Man", "Horror", 2016));
+            movieList.Add(new Movie("Terminator 2", "Action", 1991));
+            movieList.Add(new Movie("Predator", "Action", 1987));
+            movieList.Add(new Movie("Brokeback Mountain", "Romance", 2005));
+            movieList.Add(new Movie("Dayman", "Romance", 2008));
+            movieList.Add(new Movie("Troll Toll", "Comedy", 2008));
 
             ArrayList titles = new ArrayList(); //Using this list later to sort
 
@@ -74,7 +83,15 @@ namespace Movies
                             titles.Sort();                              //Sorts all the the things
                             foreach (string movieTitle in titles)
                             {
-                                Console.WriteLine(movieTitle);          //Writes out the movies on each line in order
+                                int yearMade = 0;
+                                for (int i = 0; i < movieList.Count; i++)
+                                {                          
+                                    if (movieTitle == movieList[i].Title)
+                                    {
+                                        yearMade = movieList[i].Year;
+                                    }                            
+                                }
+                                Console.WriteLine($"{movieTitle} - {yearMade}");    //Writes out the movies on each line in order
                             }
                             Console.WriteLine();                        //Just adds a space for better output formatting
                             break;
@@ -91,9 +108,17 @@ namespace Movies
                             titles.Sort();
                             foreach (string movieTitle in titles)
                             {
-                                Console.WriteLine(movieTitle);
+                                int yearMade = 0;
+                                for (int i = 0; i < movieList.Count; i++)
+                                {
+                                    if (movieTitle == movieList[i].Title)
+                                    {
+                                        yearMade = movieList[i].Year;
+                                    }
+                                }
+                                Console.WriteLine($"{movieTitle} - {yearMade}");    //Writes out the movies on each line in order
                             }
-                            Console.WriteLine();
+                            Console.WriteLine();                        //Just adds a space for better output formatting
                             break;
                         }
                     case "3":
@@ -108,9 +133,17 @@ namespace Movies
                             titles.Sort();
                             foreach (string movieTitle in titles)
                             {
-                                Console.WriteLine(movieTitle);
+                                int yearMade = 0;
+                                for (int i = 0; i < movieList.Count; i++)
+                                {
+                                    if (movieTitle == movieList[i].Title)
+                                    {
+                                        yearMade = movieList[i].Year;
+                                    }
+                                }
+                                Console.WriteLine($"{movieTitle} - {yearMade}");    //Writes out the movies on each line in order
                             }
-                            Console.WriteLine();
+                            Console.WriteLine();                        //Just adds a space for better output formatting
                             break;
                         }
                     case "4":
@@ -125,9 +158,17 @@ namespace Movies
                             titles.Sort();
                             foreach (string movieTitle in titles)
                             {
-                                Console.WriteLine(movieTitle);
+                                int yearMade = 0;
+                                for (int i = 0; i < movieList.Count; i++)
+                                {
+                                    if (movieTitle == movieList[i].Title)
+                                    {
+                                        yearMade = movieList[i].Year;
+                                    }
+                                }
+                                Console.WriteLine($"{movieTitle} - {yearMade}");    //Writes out the movies on each line in order
                             }
-                            Console.WriteLine();
+                            Console.WriteLine();                        //Just adds a space for better output formatting
                             break;
                         }
                 }
