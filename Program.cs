@@ -130,11 +130,9 @@ namespace Movies
                             Console.WriteLine();
                             break;
                         }
-
-
                 }
                 Console.Write("Continue? (y/n): ");
-                string userContinue = YesOrNo(Console.ReadLine());
+                string userContinue = YesOrNo(Console.ReadLine());  //Are we doing this again, or what?!?!?!?!?!
                 if (userContinue == "n")
                 {
                     continueFlag = false;
@@ -143,7 +141,6 @@ namespace Movies
                 Console.Clear();
             }
             Console.WriteLine($"\nOK BYEEEEEEEEE!!!!!!");
-
         }
 
         public static string SelectCategory(string answer) //method to check (y/n)
