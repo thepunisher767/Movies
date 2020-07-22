@@ -48,10 +48,9 @@ namespace Movies
             movieList.Add(new Movie("Dayman", "Romance"));
             movieList.Add(new Movie("Troll Toll", "Comedy"));
 
-            ArrayList titles = new ArrayList();
+            ArrayList titles = new ArrayList(); //Using this list later to sort
 
-
-            while (continueFlag)
+            while (continueFlag)    //While the user wants to continue
             {
                 Console.WriteLine("Welcome to the Movie list Application!\n");
                 Console.WriteLine("1. Action");
@@ -59,27 +58,25 @@ namespace Movies
                 Console.WriteLine("3. Horror");
                 Console.WriteLine("4. Romance\n");
                 Console.Write("What category are you interested in? (1-4): ");
-                string userChoice = SelectCategory(Console.ReadLine());
+                string userChoice = SelectCategory(Console.ReadLine()); //Check for good input
 
-                //Console.WriteLine(userChoice);
-
-                switch (userChoice)
+                switch (userChoice) //Do a thing depending on what was selected
                 {
                     case "1":
                         {
                             for (int i = 0; i < movieList.Count; i++)
                             {
-                                if (movieList[i].Category == "Action")
+                                if (movieList[i].Category == "Action")  //Checks for category on each movie through the loop
                                 {
-                                    titles.Add(movieList[i].Title);
+                                    titles.Add(movieList[i].Title);     //Adds movies to ArrayList for alphabetical sort
                                 }  
                             }
-                            titles.Sort();
+                            titles.Sort();                              //Sorts all the the things
                             foreach (string movieTitle in titles)
                             {
-                                Console.WriteLine(movieTitle);
+                                Console.WriteLine(movieTitle);          //Writes out the movies on each line in order
                             }
-                            Console.WriteLine();
+                            Console.WriteLine();                        //Just adds a space for better output formatting
                             break;
                         }
                     case "2":
@@ -142,9 +139,10 @@ namespace Movies
                 {
                     continueFlag = false;
                 }
-                titles.Clear();
+                titles.Clear();     //Clears the ArrayList, so previous searches don't appear on subsequent searches
                 Console.Clear();
             }
+            Console.WriteLine($"\nOK BYEEEEEEEEE!!!!!!");
 
         }
 
